@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 195 53% 93%; /* Light Blue */
+    --foreground: 224 71% 4%; /* Dark Blue/Black for text */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 197 71% 73%; /* Sky Blue */
+    --primary-foreground: 197 100% 15%; /* Darker blue for text on primary */
+
+    --secondary: 197 50% 85%; /* Lighter Sky Blue */
+    --secondary-foreground: 197 100% 15%;
+
+    --muted: 200 40% 96%; /* Lighter grey-blue */
+    --muted-foreground: 200 20% 45%; /* Darker grey-blue for muted text */
+
+    --accent: 180 100% 25%; /* Teal */
+    --accent-foreground: 0 0% 98%; /* White/Light text on Accent */
+
+    --destructive: 0 84.2% 60.2%; /* Red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 197 30% 80%; /* Softer border color, sky-blueish */
+    --input: 197 30% 88%; /* Softer input background, sky-blueish */
+    --ring: 197 71% 60%; /* Slightly darker Sky Blue for focus rings */
+
+    --chart-1: 197 71% 73%;
+    --chart-2: 180 100% 25%;
+    --chart-3: 197 50% 60%;
+    --chart-4: 180 70% 40%;
+    --chart-5: 197 90% 80%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors, harmonized with the theme */
+    --sidebar-background: 0 0% 100%; /* White sidebar for clean look */
+    --sidebar-foreground: 224 71% 15%; /* Dark blue text */
+    
+    --sidebar-primary: 197 71% 73%; /* Sky Blue for active/primary elements in sidebar */
+    --sidebar-primary-foreground: 197 100% 15%; /* Dark blue text on sidebar primary */
+    
+    --sidebar-accent: 197 53% 88%; /* Lighter sky blue for hover/accent in sidebar */
+    --sidebar-accent-foreground: 197 100% 15%; /* Dark blue text on sidebar accent */
+    
+    --sidebar-border: 197 30% 85%; /* Border for sidebar elements */
+    --sidebar-ring: 197 71% 60%; /* Ring color for focus in sidebar */
+  }
+
+  .dark {
+    /* For dark mode, we'll invert and adjust. This is a basic setup. */
+    --background: 224 71% 10%; /* Dark Blue */
+    --foreground: 195 53% 93%; /* Light Blue text */
+
+    --card: 224 71% 15%; /* Slightly lighter dark blue for cards */
+    --card-foreground: 195 53% 93%;
+
+    --popover: 224 71% 15%;
+    --popover-foreground: 195 53% 93%;
+
+    --primary: 197 71% 65%; /* Slightly desaturated Sky Blue for dark mode */
+    --primary-foreground: 0 0% 98%; /* White text on primary */
+
+    --secondary: 197 50% 50%; 
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 224 71% 20%;
+    --muted-foreground: 195 40% 70%;
+
+    --accent: 180 100% 35%; /* Brighter Teal for dark mode */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 224 71% 25%;
+    --input: 224 71% 25%;
+    --ring: 197 71% 50%;
+
+    --sidebar-background: 224 71% 12%; 
+    --sidebar-foreground: 195 53% 85%;
+    
+    --sidebar-primary: 197 71% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    
+    --sidebar-accent: 197 71% 25%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    
+    --sidebar-border: 224 71% 20%;
+    --sidebar-ring: 197 71% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@media print {
+  .print\:hidden {
+    display: none;
+  }
+  .print\:shadow-none {
+    box-shadow: none;
+  }
+  .print\:border-none {
+    border: none;
+  }
+  body {
+    background-color: #fff;
+  }
+}
